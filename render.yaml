@@ -1,0 +1,31 @@
+services:
+  - type: web
+    name: college-event-tracker
+    env: node
+    plan: starter # Change to standard or pro for better performance
+    buildCommand: npm install && npm run build -- --webpack
+    startCommand: npm start
+    envVars:
+      - key: MONGODB_URI
+        sync: false # Set this in Render dashboard
+      - key: NODE_ENV
+        value: production
+      - key: NEXT_PUBLIC_STREAM_URL
+        value: /api/stream
+    healthCheckPath: /api/keepalive
+    autoDeploy: true
+
+  # Optional: Separate cron job service (requires paid plan)
+  # For free tier, use external cron service (see RENDER_DEPLOY.md)
+  # - type: cron
+  #   name: keepalive-cron
+  #   schedule: "*/5 * * * *" # Every 5 minutes
+  #   env: docker
+  #   dockerfilePath: ./Dockerfile.cron
+  #   envVars:
+  #     - key: KEEPALIVE_URL
+  #       fromService:
+  #         type: web
+  #         name: college-event-tracker
+  #         property: url
+

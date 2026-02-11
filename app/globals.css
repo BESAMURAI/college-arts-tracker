@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  /* KALA KRITI / Arts Fest palette */
+  --arts-red: 229 62 53;
+  --arts-blue: 0 160 227;
+  --arts-green: 79 187 85;
+  --arts-orange: 240 107 43;
+  --arts-purple: 139 69 188;
+  --arts-pink: 237 78 116;
+  --arts-bg-from: #e8f4fc;
+  --arts-bg-mid: #f0f7ff;
+  --arts-bg-to: #d6e8f5;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Brush-stroke style for arts fest point boxes */
+.arts-brush-box {
+  border-radius: 16px 20px 18px 22px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* Dark glass container with glowing border for results */
+.arts-container-glass {
+  background: rgba(30, 41, 59, 0.5);
+  backdrop-filter: blur(20px);
+  border: 2px solid rgba(240, 107, 43, 0.5);
+  box-shadow: 0 0 30px rgba(240, 107, 43, 0.25), 0 0 60px rgba(240, 107, 43, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+.arts-container-glass-purple {
+  background: rgba(30, 41, 59, 0.5);
+  backdrop-filter: blur(20px);
+  border: 2px solid rgba(139, 69, 188, 0.5);
+  box-shadow: 0 0 30px rgba(139, 69, 188, 0.25), 0 0 60px rgba(139, 69, 188, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
